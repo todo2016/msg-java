@@ -9,4 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @date: 2018/3/31 00:28
  */
 public interface UserInfoRepository extends JpaRepository<UserInfoDO, String> {
+
+    UserInfoDO getOneByUserNameAndUserPwdAndAndUserStatus(String userName,String userPwd,Integer userStatus);
 }
+

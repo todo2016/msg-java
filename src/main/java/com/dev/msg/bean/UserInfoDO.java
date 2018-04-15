@@ -15,7 +15,7 @@ public class UserInfoDO {
     private String userAvatar;
     private String userName;
     private String userPwd;
-    private Byte userStatus;
+    private Integer userStatus;
     private Date createTime;
     private Date updateTime;
 
@@ -61,11 +61,11 @@ public class UserInfoDO {
 
     @Basic
     @Column(name = "user_status")
-    public Byte getUserStatus() {
+    public Integer getUserStatus() {
         return userStatus;
     }
 
-    public void setUserStatus(Byte userStatus) {
+    public void setUserStatus(Integer userStatus) {
         this.userStatus = userStatus;
     }
 

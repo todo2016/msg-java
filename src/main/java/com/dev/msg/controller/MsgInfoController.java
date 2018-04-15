@@ -3,6 +3,7 @@ package com.dev.msg.controller;
 import com.dev.msg.bean.MsgInfoDO;
 import com.dev.msg.service.MsgInfoService;
 import com.dev.msg.utils.ResultVOUtil;
+import com.dev.msg.utils.UserContext;
 import com.dev.msg.vo.ResultVO;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +53,7 @@ public class MsgInfoController {
 
         msgInfoDO.setMsgId(UUID.randomUUID().toString());
         msgInfoDO.setCreateTime(new Date());
-
+        msgInfoDO.setUserId(UserContext.getUser().getUserName());
         return ResultVOUtil.success(msgInfoService.save(msgInfoDO));
     }
 }
